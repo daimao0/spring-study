@@ -1,17 +1,15 @@
-import com.hgc.service.UserService;
+import com.hgc.pojo.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @Author:daMao
- * @Date: Created in 4:43 2020/6/30
+ * @Date: Created in 14:35 2020/6/30
  */
 public class MyTest {
-
     public static void main(String[] args) {
-        //得到spring容器
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        UserService userServiceImpl = (UserService) context.getBean("userServiceImpl");
-        userServiceImpl.getUser();
+        Student student = (Student) context.getBean("student");
+        System.out.println(student.getName());
     }
 }

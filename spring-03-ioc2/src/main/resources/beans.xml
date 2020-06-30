@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="user" class="com.hgc.pojo.User" name="user2,user3">
+        <property name="name" value="张三"/>
+        <!-- 第一种，下标赋值-->
+<!--        <constructor-arg index="0" value="张三"/>-->
+        <!--第二种，根据类型传值（不建议使用）-->
+<!--        <constructor-arg type="java.lang.String" value="张三"/>-->
+        <!--第三种，通过参数名赋值-->
+        <constructor-arg name="name" value="张三"/>
+    </bean>
+
+    <bean id="userT" class="com.hgc.pojo.UserT"/>
+<!--如果添加了别名，就可以用别名获取对象-->
+    <alias name="user" alias="userNew"/>
+</beans>
